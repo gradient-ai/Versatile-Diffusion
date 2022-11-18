@@ -6,7 +6,7 @@ Launch this demo in Paperspace Gradient by clicking the link below.
 
 ## Launch Notebook
 
-[![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/gradient-ai/Versatile-Diffusion/blob/master/versatile-diffusion-notebook.ipynb?machine=Free-GPU)
+[![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/gradient-ai/Versatile-Diffusion/blob/master/versatile-diffusion-notebook.ipynb?machine=A4000)
 
 ---
 
