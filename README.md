@@ -1,5 +1,15 @@
 # Versatile Diffusion
 
+This fork shows how to use Versatile Diffusion in a Gradient Notebook
+
+Launch this demo in Paperspace Gradient by clicking the link below.
+
+## Launch Notebook
+
+[![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/gradient-ai/Versatile-Diffusion/blob/master/versatile-diffusion-notebook.ipynb?machine=Free-GPU)
+
+---
+
 [![Huggingface space](https://img.shields.io/badge/🤗-Huggingface%20Space-cyan.svg)](https://huggingface.co/spaces/shi-labs/Versatile-Diffusion)
 [![Framework: PyTorch](https://img.shields.io/badge/Framework-PyTorch-orange.svg)](https://pytorch.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -24,7 +34,7 @@ We built **Versatile Diffusion (VD), the first unified multi-flow multimodal dif
 
 ## Network and Framework
 
-One single flow of Versatile Diffusion contains a VAE, a diffuser, and a context encoder,  and thus handles one task (e.g., text-to-image) under one data type (e.g., image) and one context type (e.g., text). The multi-flow structure of Versatile Diffusion shows in the following diagram:
+One single flow of Versatile Diffusion contains a VAE, a diffuser, and a context encoder, and thus handles one task (e.g., text-to-image) under one data type (e.g., image) and one context type (e.g., text). The multi-flow structure of Versatile Diffusion shows in the following diagram:
 
 <p align="center">
   <img src="assets/figures/VD_framework.png" width="99%">
@@ -32,10 +42,9 @@ One single flow of Versatile Diffusion contains a VAE, a diffuser, and a context
 
 According to Versatile Diffusion, we further proposed a generalized multi-flow multimodal framework with VAEs, context encoders, and diffusers containing three layers (i.e., global, data, and context layers). To involve a new multimodal task in this framework, we bring out the following requirements:
 
-* The design of the core diffuser should contain shared global layers, swappable data, and context layers that will be correspondingly activated based on data and context types.
-* The choice of VAEs should smoothly map data onto highly interpretable latent spaces.
-* The choice of context encoders should jointly minimize the cross-modal statistical distance on all supported content types.
-
+- The design of the core diffuser should contain shared global layers, swappable data, and context layers that will be correspondingly activated based on data and context types.
+- The choice of VAEs should smoothly map data onto highly interpretable latent spaces.
+- The choice of context encoders should jointly minimize the cross-modal statistical distance on all supported content types.
 
 ## Performance
 
@@ -103,12 +112,13 @@ python main.py --config vd_dc_eval --gpu 0 1 2 3 4 5 6 7 --eval 99999
 python main.py --config vd_official_eval --gpu 0 1 2 3 4 5 6 7 --eval 99999
 ```
 
-All corresponding evaluation configs can be found in ```./configs/experiment```. There are useful information in the config. You can easy customized it and run your own batched evaluations.
+All corresponding evaluation configs can be found in `./configs/experiment`. There are useful information in the config. You can easy customized it and run your own batched evaluations.
 
 For the commands above, you also need to:
-* Create ```./pretrained``` and move all downloaded pretrained models in it.
-* Create ```./log/sd_nodataset/99999_eval``` for baseline evaluations on Stable Diffusion
-* Create ```./log/vd_nodataset/99999_eval``` for evaluations on Versatile Diffusion
+
+- Create `./pretrained` and move all downloaded pretrained models in it.
+- Create `./log/sd_nodataset/99999_eval` for baseline evaluations on Stable Diffusion
+- Create `./log/vd_nodataset/99999_eval` for evaluations on Versatile Diffusion
 
 ## Training
 
